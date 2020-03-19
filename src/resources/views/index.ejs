@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!--
+Copyright 2019 the original author or authors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yet Another URL Shortener</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>URL Shrinker</h1>
+    <form class="my-4 form-inline" action="/create" method="POST">
+      <label class="sr-only" for="fullUrl">URL</label>
+      <input id="fullUrl" class="form-control mr-2 col" required placeholder="URL" type="url" name="fullUrl">
+      <button class="btn btn-success" type="submit">Shrink</button>
+    </form>
+
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>full</th>
+            <th>short</th>
+            <th>clicks</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% items.forEach(item => { %>
+            <tr>
+              <td><a href="<%= item.full %>"><%= item.full %></a></td>
+              <td><a href="/<%= item.short %>"><%= item.short %></a></td>
+              <td><%= item.clicks %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>
