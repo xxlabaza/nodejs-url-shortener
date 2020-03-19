@@ -1,7 +1,7 @@
 
 # Overview
 
-This is a yet another implementation of an URL shortener service based on **Web Dev Simplified** (tutorial)[https://www.youtube.com/watch?v=SLpUKAGnm-g&t=25s] and customised (try to find my own NodeJS style...) by me.
+This is a yet another implementation of an URL shortener service based on **Web Dev Simplified** [tutorial](https://www.youtube.com/watch?v=SLpUKAGnm-g&t=25s) and customised (try to find my own NodeJS style...) by me.
 
 To run the project, start a **MongoDB** database, for example via a **Docker**:
 
@@ -26,6 +26,6 @@ $> npm run start-dev
 
 ```
 
-Open (localhost:5000)[http://localhost:5000] in your web browser and see something like this:
+Open [localhost:5000](http://localhost:5000) in your web browser and see something like this:
 
 ![filled table](https://github.com/xxlabaza/nodejs-url-shortener/blob/master/.screenshots/screenshot-1.png?raw=true)
