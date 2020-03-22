@@ -15,25 +15,42 @@
  * limitations under the License.
  */
 
-const databaseHost = process.env.DATABASE_HOST || "127.0.0.1";
-require("mongoose").connect(`mongodb://${databaseHost}/url_shortener-db`, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
 const express = require("express");
-const app = express();
+const mongoose = require("mongoose");
+const router = express.Router();
 
-app.set('views','./src/resources/views');
-app.set("view engine", "ejs");
 
-app.use(express.urlencoded({ extended: false }))
-
-const shortUrlRouter = require("./src/main/ShortUrlRouter");
-const healthRouter = require("./src/main/HealthRouter");
-app.use(healthRouter, shortUrlRouter);
-
-const serverPort = process.env.SERVER_PORT || 5000;
-app.listen(serverPort, function () {
-  console.log(`the server started on port ${serverPort}`)
+const statusUp = JSON.stringify({
+  status: "UP",
+  database: {
+    status: "UP",
+    connected: true
+  }
 });
+
+const statusDown = JSON.stringify({
+  status: "DOWN",
+  database: {
+    status: "DOWN",
+    connected: false
+  }
+});
+
+router.get("/health", (request, response) => {
+  let status;
+  let body;
+  if (mongoose.connection.readyState === 1) {
+    status = 200;
+    body = statusUp;
+  } else {
+    status = 500;
+    body = statusDown
+  }
+
+  response
+      .status(status)
+      .type('application/json')
+      .send(body);
+});
+
+module.exports = router;
