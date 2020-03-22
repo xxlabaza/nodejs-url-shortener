@@ -2,6 +2,13 @@
   "name": "url-shortener",
   "version": "1.0.0",
   "description": "Yet another URL Shortener",
+  "keywords": [
+    "nodejs",
+    "bootstrap",
+    "express",
+    "url-shortener",
+    "tutorial"
+  ],
   "main": "main.js",
   "scripts": {
     "start-dev": "nodemon main.js"

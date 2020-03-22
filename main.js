@@ -31,4 +31,7 @@ app.use(express.urlencoded({ extended: false }))
 const shortUrlRouter = require("./src/main/ShortUrlRouter");
 app.use("/", shortUrlRouter);
 
-app.listen(process.env.PORT || 5000);
+const port = process.env.PORT || 5000;
+app.listen(port, function () {
+  console.log(`the server started on port ${port}`)
+});
