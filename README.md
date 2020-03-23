@@ -3,7 +3,7 @@
 
 This is a yet another implementation of an URL shortener service based on **Web Dev Simplified** [tutorial](https://www.youtube.com/watch?v=SLpUKAGnm-g&t=25s) and customised (try to find my own NodeJS style...) by me.
 
-The project's fetures:
+The project's features:
 
 * its frontend made with `Bootstrap` and `EJS` templates;
 * stores data in `MongoDB` via `mongoose` library;
