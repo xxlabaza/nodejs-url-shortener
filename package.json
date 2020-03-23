@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "url-shortener",
   "version": "1.0.1",
   "description": "Yet another URL Shortener",
@@ -9,19 +10,20 @@
     "url-shortener",
     "tutorial"
   ],
+  "author": "Artem Labazin <xxlabaza@gmail.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xxlabaza/nodejs-url-shortener"
+  },
+  "bugs": {
+    "url": "https://github.com/xxlabaza/nodejs-url-shortener/issues"
+  },
   "main": "main.js",
   "scripts": {
     "start:dev": "nodemon main.js",
     "start": "node main.js"
   },
-  "author": "Artem Labazin <xxlabaza@gmail.com>",
-  "license": "Apache-2.0",
-  "licenses": [
-    {
-      "type": "Apache-2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0"
-    }
-  ],
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "^4.17.1",
@@ -30,5 +32,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
+  },
+  "engines": {
+    "node": ">=12.13.0"
   }
 }
