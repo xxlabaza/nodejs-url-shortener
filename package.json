@@ -22,15 +22,18 @@
   "main": "main.js",
   "scripts": {
     "start:dev": "nodemon main.js",
-    "start": "node main.js"
+    "start": "node main.js",
+    "verify": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "log4js": "^6.1.2",
     "mongoose": "^5.9.5",
     "shortid": "^2.2.15"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
     "nodemon": "^2.0.2"
   },
   "engines": {

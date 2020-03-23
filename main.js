@@ -15,6 +15,8 @@
  * limitations under the License.
  */
 
+const log = require("./src/main/Logger").get();
+
 const databaseHost = process.env.DATABASE_HOST || "127.0.0.1";
 require("mongoose").connect(`mongodb://${databaseHost}/url_shortener-db`, {
   useNewUrlParser: true,
@@ -24,10 +26,10 @@ require("mongoose").connect(`mongodb://${databaseHost}/url_shortener-db`, {
 const express = require("express");
 const app = express();
 
-app.set('views','./src/resources/views');
+app.set("views", "./src/resources/views");
 app.set("view engine", "ejs");
 
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
 
 const shortUrlRouter = require("./src/main/ShortUrlRouter");
 const healthRouter = require("./src/main/HealthRouter");
@@ -35,5 +37,5 @@ app.use(healthRouter, shortUrlRouter);
 
 const serverPort = process.env.SERVER_PORT || 5000;
 app.listen(serverPort, function () {
-  console.log(`the server started on port ${serverPort}`)
+  log.info("the server started on port %d", serverPort);
 });
