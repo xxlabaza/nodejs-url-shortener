@@ -18,23 +18,23 @@
 const express = require("express");
 const router = express.Router();
 
-const repository = require("./ShortUrlModel");
+const ShortUrl = require("./model");
 
 
 router.get("/", async (_, response) => {
-  const items = await repository.find();
+  const items = await ShortUrl.find();
   response.render("index", { items: items });
 });
 
 router.post("/create", async (request, response) => {
   const fullUrl = request.body.fullUrl;
-  await repository.create({ full: fullUrl });
+  await ShortUrl.create({ full: fullUrl });
   response.redirect("/");
 });
 
 router.get("/:shortUrl", async (request, response) => {
   const shortUrl = request.params.shortUrl;
-  const item = await repository.findOne({ short: shortUrl });
+  const item = await ShortUrl.findOne({ short: shortUrl });
   if (item === null) {
     return response.sendStatus(404);
   }
