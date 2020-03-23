@@ -17,62 +17,62 @@
 
 module.exports = {
     "env": {
-        "commonjs": true,
-        "es6": true,
-        "node": true
+      "commonjs": true,
+      "es6": true,
+      "node": true
     },
     "extends": "eslint:recommended",
     "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
-        "ecmaVersion": 2018
+      "ecmaVersion": 2018
     },
     "rules": {
-        "no-console": [
-            "error",
-            { "allow": ["warn", "error"] }
-        ],
-        "indent": [
-            "error",
-            2
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "space-before-function-paren": [
-            "error",
-            { "anonymous": "always", "named": "always", "asyncArrow": "always" }
-        ],
-        "space-in-parens": [
-            "error",
-            "never"
-        ],
-        "space-before-blocks": [
-            "error",
-            "always"
-        ],
-        "arrow-spacing": [
-            "error",
-            { "before": true, "after": true }
-        ],
-        "space-infix-ops": [
-            "error",
-            { "int32Hint": false }
-        ],
-        "keyword-spacing": [
-            "error",
-            { "before": true, "after": true }
-        ]
+      "no-console": [
+        "error",
+        { "allow": ["warn", "error"] }
+      ],
+      "indent": [
+        "error",
+        2
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "quotes": [
+        "error",
+        "double"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "space-before-function-paren": [
+        "error",
+        { "anonymous": "always", "named": "always", "asyncArrow": "always" }
+      ],
+      "space-in-parens": [
+        "error",
+        "never"
+      ],
+      "space-before-blocks": [
+        "error",
+        "always"
+      ],
+      "arrow-spacing": [
+        "error",
+        { "before": true, "after": true }
+      ],
+      "space-infix-ops": [
+        "error",
+        { "int32Hint": false }
+      ],
+      "keyword-spacing": [
+        "error",
+        { "before": true, "after": true }
+      ]
     }
-};
+  };
