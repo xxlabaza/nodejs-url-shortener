@@ -34,7 +34,7 @@
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "log4js": "^6.1.2",
+    "log4js": "^6.4.0",
     "mongoose": "^5.9.5",
     "shortid": "^2.2.15"
   },
